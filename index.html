@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr" class="h-full w-full overflow-hidden select-none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#020617" />
+    <title>DRINKS FRIDGE - Buzdolabı Düzenleme Bulmacası</title>
+    <meta name="description" content="Buzdolabı ve derin dondurucu raflarında 3D teneke içecek kutularını düzenle, 3 aynı içeceği eşleştir ve reyonları temizle!" />
+    <meta property="og:title" content="DRINKS FRIDGE - Buzdolabı Düzenleme Bulmacası" />
+    <meta property="og:description" content="Buzdolabı ve derin dondurucu raflarında 3D teneke içecek kutularını düzenle, 3 aynı içeceği eşleştir ve reyonları temizle!" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      /* Mobile Immersive Fullscreen & Safe Area discipline */
+      html, body, #root {
+        height: 100%;
+        height: 100dvh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        background-color: #020617;
+      }
+      /* Hide navigation bar padding support */
+      :root {
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+  <body className="h-full w-full bg-slate-950 overflow-hidden">
+    <div id="root" className="h-full w-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

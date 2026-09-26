@@ -1,0 +1,6 @@
+{
+  "name": "DRINKS FRIDGE",
+  "description": "Buzdolabı ve derin dondurucu raflarında 3D teneke içecek kutularını düzenle, 3 aynı içeceği eşleştir ve reyonları temizle!",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
