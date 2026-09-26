@@ -3,7 +3,6 @@ import { ArrowLeft, Lock, Star, Trophy } from 'lucide-react';
 import { LEVELS } from '../data/levels';
 import { UserProgress } from '../types/game';
 
-import { requestFullscreenMode } from '../utils/fullscreen';
 
 interface LevelSelectModalProps {
   progress: UserProgress;
@@ -84,7 +83,6 @@ export const LevelSelectModal: React.FC<LevelSelectModalProps> = ({
                       disabled={!isUnlocked}
                       onClick={() => {
                         if (isUnlocked) {
-                          requestFullscreenMode();
                           onSelectLevel(lvl.levelNumber);
                         }
                       }}

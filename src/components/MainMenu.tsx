@@ -5,7 +5,6 @@ import { LEVELS } from '../data/levels';
 import { PRODUCT_LIST } from '../data/products';
 import { ProductPackage } from './ProductPackage';
 
-import { requestFullscreenMode } from '../utils/fullscreen';
 
 interface MainMenuProps {
   progress: UserProgress;
@@ -25,7 +24,6 @@ export const MainMenu: React.FC<MainMenuProps> = ({
   onOpenHowToPlay,
 }) => {
   const handlePlayClick = () => {
-    requestFullscreenMode();
     onPlay();
   };
   const totalStars = Object.values(progress.starsPerLevel).reduce((acc, s) => acc + s, 0);
