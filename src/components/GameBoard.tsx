@@ -729,10 +729,10 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       />
 
       {/* Main Refrigerator / Deep Freezer Cabinet (Buzdolabı Gövdesi) */}
-      <main className="relative flex-1 w-full max-w-sm sm:max-w-md flex flex-col justify-center px-1 py-0.5 z-10 overflow-hidden my-auto max-h-[calc(100dvh-110px)]">
+      <main className="relative flex-1 w-full max-w-md sm:max-w-lg flex flex-col justify-center px-0.5 sm:px-1 py-0.5 z-10 overflow-hidden my-auto max-h-[calc(100dvh-100px)]">
         {/* Refrigerator Showcase Frame with Red Pulsing Warning Aura when Time <= 15s */}
         <div
-          className={`w-full relative flex flex-col my-auto rounded-2xl sm:rounded-3xl bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 border-2 sm:border-4 p-1.5 sm:p-2.5 overflow-hidden transition-all duration-300 ${
+          className={`w-full relative flex flex-col my-auto rounded-2xl sm:rounded-3xl bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 border-2 sm:border-4 p-1 sm:p-2.5 overflow-hidden transition-all duration-300 ${
             isWarningTime
               ? 'border-rose-500 shadow-[0_0_35px_rgba(244,63,94,0.95)] animate-pulse'
               : 'border-slate-300/90 shadow-[0_20px_50px_rgba(0,0,0,0.8)]'
@@ -744,7 +744,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
 
           {/* Refrigerator Temperature & Mode Header */}
           <div
-            className={`w-full rounded-lg sm:rounded-xl px-2 py-1 mb-1.5 sm:mb-2 border flex items-center justify-between shadow-inner transition-colors ${
+            className={`w-full rounded-lg sm:rounded-xl px-2 py-1 mb-1 sm:mb-2 border flex items-center justify-between shadow-inner transition-colors ${
               isWarningTime
                 ? 'bg-rose-950/90 border-rose-500'
                 : 'bg-slate-950/90 border-sky-400/40'
@@ -777,7 +777,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           </div>
 
           {/* 4 Refrigerator Shelf Rows (yatayda 4 sıra) */}
-          <div className="w-full flex flex-col gap-1.5 sm:gap-2">
+          <div className="w-full flex flex-col gap-1 sm:gap-2">
             {Array.from({ length: 4 }, (_, rIdx) => {
               const rowCompartments = shelves.slice(rIdx * 3, rIdx * 3 + 3);
               const isRowEmpty = rowCompartments.every((comp) =>
@@ -793,16 +793,16 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                   : `🥤 SOĞUK İÇECEK KATI ${rIdx}`;
 
               return (
-                <div key={`shelf-row-${rIdx}`} className="w-full flex flex-col gap-1">
+                <div key={`shelf-row-${rIdx}`} className="w-full flex flex-col gap-0.5 sm:gap-1">
                   {/* Row Shelf Zone Header Badge */}
-                  <div className="w-full flex items-center justify-between px-2 text-[9px] font-black text-sky-200/80 tracking-wider uppercase">
+                  <div className="w-full flex items-center justify-between px-1 text-[9px] font-black text-sky-200/80 tracking-wider uppercase">
                     <span>{rowLabel}</span>
                     {isRowEmpty && <span className="text-emerald-400 font-bold">✓ TEMİZLENDİ</span>}
                   </div>
 
                   {/* 3 Compartments in this Row */}
                   <div
-                    className={`w-full flex items-center justify-between gap-1.5 p-1 rounded-2xl border transition-all duration-300 ${
+                    className={`w-full flex items-center justify-between gap-1 sm:gap-1.5 p-0.5 sm:p-1 rounded-2xl border transition-all duration-300 ${
                       isRowEmpty
                         ? 'bg-sky-950/20 border-dashed border-sky-300/30 opacity-40'
                         : rIdx === 0

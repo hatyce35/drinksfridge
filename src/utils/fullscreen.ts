@@ -4,7 +4,12 @@ export const requestFullscreenMode = async (): Promise<boolean> => {
     if (!docEl) return false;
 
     if (docEl.requestFullscreen) {
-      await docEl.requestFullscreen({ navigationUI: 'hide' });
+      try {
+        await docEl.requestFullscreen({ navigationUI: 'hide' });
+      } catch {
+        // Fallback for browsers that reject navigationUI parameter
+        await docEl.requestFullscreen();
+      }
     } else if (docEl.webkitRequestFullscreen) {
       await docEl.webkitRequestFullscreen();
     } else if (docEl.msRequestFullscreen) {
